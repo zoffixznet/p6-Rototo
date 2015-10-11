@@ -8,13 +8,14 @@ things to test
 
     module X::html {}
 
-    # sub p (*%attrs, *@data) {
-    #     "<p"
-    #     , %attrs.kv.map( -> $k, $v {
-    #         if ( $v ~~ Bool ) { Q:qq< $k> } 
-    #         else              { Q:qq< $k="$v"> } 
-    #     }), ">", @data , "</p>";
-    # }
+
+    sub p (*%attrs, *@data) {
+        "<p"
+        , %attrs.kv.map( -> $k, $v {
+            if ( $v ~~ Bool ) { Q:qq< $k> } 
+            else              { Q:qq< $k="$v"> } 
+        }), ">", @data , "</p>";
+    }
 
     sub EXPORTER {
         { < p div >.map:

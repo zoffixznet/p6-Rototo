@@ -2,8 +2,14 @@ use v6;
 use Test;
 use Rototo::html;
 
-ok p("test")
-, '<p>test</p>'
-, "p is exported right";
+say join '',
+    (table
+        (tr
+            (td :selected, "hello"),
+            (td "world")))
 
-done;
+# ok p("test")
+# , '<p>test</p>'
+# , "p is exported right";
+# 
+# done;
