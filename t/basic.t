@@ -13,6 +13,18 @@ ok H(td :selected, :id<hello>, "hello") ~~
     , '<td id="hello" selected>hello</td>')
 , "boolean attr + id";
 
+ok H(td :class<old>, :id<hello>, "hello") ~~
+    ( '<td class="old" id="hello">hello</td>'
+    , '<td id="hello" class="old">hello</td>')
+, "2 kv attrs";
+
+ok H(td %(< class old id hello >), "hello") ~~
+    ( '<td class="old" id="hello">hello</td>'
+    , '<td id="hello" class="old">hello</td>')
+, "2 kv attrs, the quoted words way";
+
+
+
 is H( div :id<hello>
     , p("hello")
     , p("world"))
