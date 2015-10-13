@@ -3,7 +3,8 @@
 use Rototo;
 
 sub EXPORT {
-    %(|< html head title 
+    %(|< a
+        html head title 
         body
         div span p
         ul ol li
@@ -18,7 +19,7 @@ sub EXPORT {
         table col colgroup caption tbody thead tfoot th
         input
         tr td link
-        >.map( -> $tag { "\&$tag" => mktag $tag })
-    , |< br meta >.map: -> $tag { "\&$tag" => -> %attr? { "<$tag %attr/>" } }
+        >.map( -> $tag { "\&$tag" => mktag $tag})
+        , |< br meta >.map( -> $tag { "\&$tag" => mktag $tag, :empty })
     )
 }
