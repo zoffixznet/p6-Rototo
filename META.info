@@ -1,4 +1,5 @@
-{ "name" : "Rototo"
+{ "perl" : "6.*"
+, "name" : "Rototo"
 , "version" : "*"
 , "description" : "the xml/html templating system that came after hipccup"
 , "author" : "Marc Chantreux"
